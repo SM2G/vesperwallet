@@ -12,7 +12,7 @@ app.controller('FormController', function () {
 
     this.genSeed = function(passphrase, salt) {
         var seed = "";
-        var derivedKey = sjcl.misc.pbkdf2(passphrase, salt, 1000, 256);
+        var derivedKey = sjcl.misc.pbkdf2(passphrase, salt, 50000, 256);
 
         for(;seed.length < 81;seed += sjcl.codec.base64.fromBits(derivedKey).replace(/[^A-Z9]+/g, '')) {};
         seed = seed.substr(1, 81)

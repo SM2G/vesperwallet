@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" ng-app="vesper">
+<head>
+
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>Vesper Wallet</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Skeleton -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+</head>
+<body>
+    <div class="container" ng-controller="FormController as formCtrl">
+        <h1>{{ formCtrl.title }}</h1>
+        <!-- Seed Generation form -->
+        <form name="formElements" ng-submit="formElements.$valid" method="POST" novalidate>
+            <div class="row">
+                <div class="twelve columns">
+                    <label>Passphrase</label>
+                    <input class="u-full-width" placeholder="passphrase" ng-model="formCtrl.passphrase" type="text" required>
+                    <p class="text-info">Passphrase length: {{ formCtrl.passphrase.split("").length }}</p>
+                </div>
+                <div class="twelve columns">
+                    <label>Salt<small> (your e-mail)</small></label>
+                    <input class="u-full-width" placeholder="test@mail.com" ng-model="formCtrl.salt" type="email" required>
+                </div>
+            </div>
+            <label>
+                <input type="checkbox" required>
+                <span class="label-body">I confirm the <em>Passphrase</em> and <em>Salt</em> above.</span>
+            </label>
+            <button ng-click="formCtrl.genSeed(formCtrl.passphrase, formCtrl.salt);" class="button-primary" style="margin-right:10px" ng-disabled="formElements.$invalid">Generate Seed</button>
+            <button ng-click="formCtrl.reset()">Reset</button>
+        </form>
+
+        <div id="seed">
+            <p>Input your passphrase and e-mail as salt to generate a seed.</br>
+                <strong>Note:</strong> This seed is generated in your browser and not sent anywhere.</p>
+            </div>
+        </div>
+
+        <!-- Angular JS -->
+        <script type="text/javascript" src="js/angular-1.6.6.min.js"></script>
+
+        <!-- Standford Crypto -->
+        <script type="text/javascript" src="js/sjcl.js"></script>
+
+        <!-- Vesper Wallet -->
+        <script type="text/javascript" src="js/vesper.js"></script>
+
+    </body>
+    </html>

@@ -2,27 +2,37 @@
 <html lang="en" ng-app="vesper">
 <head>
 
-    <!-- Basic Page Needs -->
-    <meta charset="utf-8">
-    <title>Vesper Wallet</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!-- Basic Page Needs -->
+<meta charset="utf-8">
+<title>Vesper Wallet</title>
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/vesper.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
+<!-- CSS -->
+<style>
+body {
+    background: #c8d7dc;
+    background: -moz-linear-gradient(top,  #c8d7dc 0%, #e3eaed 63%, #f2f5f6 100%);
+    background: -webkit-linear-gradient(top,  #c8d7dc 0%,#e3eaed 63%,#f2f5f6 100%);
+    background: linear-gradient(to bottom,  #c8d7dc 0%,#e3eaed 63%,#f2f5f6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8d7dc', endColorstr='#f2f5f6',GradientType=0 );
+    background-size: 100%;
+    background-repeat: repeat-x;
+    background-color: #f2f5f6;
+}
+</style>
 
-    <!-- Favicon -->
-    <!--<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />-->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/octicons.css">
 
 </head>
 <body>
     <div class="container" ng-controller="FormController as formCtrl">
-        <h1>{{ formCtrl.title }}</h1>
+        <h1><i class="octicon-mark-github"></i> {{ formCtrl.title }}</h1>
         <!-- Seed Generation form -->
         <form name="formElements" ng-submit="formElements.$valid" method="POST" novalidate>
             <div class="row">
@@ -56,18 +66,18 @@
                 <h5>What is VesperWallet?</h5>
                 <p>VesperWallet is a deterministic <strong>IOTA Seed generator</strong>. You never have to save or store your private key anywhere. Just pick a really good password - many random words, for example - and never use it for anything else.
                 It's also hosted on <a href="https://github.com/SM2G/vesperwallet">Github</a>.</p>
-                <p>This is not an original idea. <a href="https://keybase.io/warp/warp_1.0.8_SHA256_5111a723fe008dbf628237023e6f2de72c7953f8bb4265d5c16fc9fd79384b7a.html">Bitcoin's WarpWallet</a> is the original inspiration.</p>
-                <p>VesperWallet proudly brings all the benefits of WarpWallet to IOTA:
+                <p>This is not an original idea. <a href="https://keybase.io/warp/warp_1.0.8_SHA256_5111a723fe008dbf628237023e6f2de72c7953f8bb4265d5c16fc9fd79384b7a.html">Bitcoin's WarpWallet</a> is the original inspiration.
+                </br>VesperWallet simply brings all the benefits of WarpWallet to IOTA:
                 <ul>
-                    <li>The ability to create secure random Seeds through Standford Javascript crypto library.</li>
-                    <li>Also the insurance that you'll be able to retrieve your secret seed without relying on any piece of hardware.</li>
-                    <li>Plus a pinch of salt with your email address. So any attacker of VesperWallet addresses would have to target you individually, rather than netting you in a wider, generic sweep. Ans your email is trivial to remember.</li>
+                    <li>The ability to create secure random Seeds through <strong>Standford Javascript crypto library</strong>.</li>
+                    <li>The insurance that you'll be able to retrieve your secret seed without relying on any piece of hardware.</li>
+                    <li>With your email address as salt, an attacker would have to target you individually, rather than netting you in a wider, generic sweep. And your email is trivial to remember.</li>
                 </ul>
                 </p>
             </div>
             <div class="one-third column" style="text-align: justify; text-justify: inter-word;">
                 <h5>The Author</h5>
-                <p>IT engineer, used to specialize in database administration. I fell into the crypto-world in 2016 and not going back.</p>
+                <p>IT engineer, used to specialize in database administration. I fell into the crypto-world in 2016 and not going back. <a href="https://www.linkedin.com/in/samygejzenblozen/">Get in touch</a>.</p>
                 <h5>Why Vesper?</h5>
                 <p>This project has been inspired by this great article "<a href="http://maxtaco.github.io/bitcoin/2014/01/16/how-jason-bourne-stores-his-bitcoin/">How Jason Bourns would store it's Bitcoins?</a>" and I wanted to bring the same tool to the IOTA universe.</p>
                 <p>As a 007 fan, this project is named after Vesper Lynd, who shouldn't have been trusted and yet who's the key to the whole movie. So don't trust me, <a href="https://github.com/SM2G/vesperwallet">trust the code</a>.</p>

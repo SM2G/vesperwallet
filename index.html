@@ -27,7 +27,7 @@ body {
 
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/skeleton.css">
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
     <div class="container" ng-controller="FormController as formCtrl">
@@ -55,11 +55,7 @@ body {
                 <button onclick="goprint()">Print</button>
             </div>
         </form>
-        <div class="row" id="seed">
-            <h5><u>Instructions:</u></br>
-                Input your passphrase and e-mail as salt to generate a seed.</br>
-                <strong>Note:</strong> This seed is generated in your browser and not sent anywhere.</h5>
-        </div>
+        <div class="row" id="seed"></div>
 
         <div class="row">
             <div class="two-thirds column" style="text-align: justify; text-justify: inter-word;">

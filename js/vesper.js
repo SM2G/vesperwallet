@@ -4,11 +4,20 @@ app.controller('FormController', function () {
     this.passphrase = "";
     this.salt = "";
     this.title = "Vesper Wallet";
+    this.instructions = "<h5><u>Instructions:</u>\
+    <ol>\
+    <li>Choose a strong, random passphrase</li>\
+    <li>Input your passphrase and e-mail as salt to generate a seed.</li>\
+    <li>Note your passphrase somewhere safe.</li>\
+    </ol>\
+    <strong>Note:</strong> This seed is generated in your browser and not sent anywhere.</h5>";
+
+    document.getElementById("seed").innerHTML = this.instructions;
 
     this.reset = function() {
         this.passphrase = "";
         this.salt = "";
-        document.getElementById("seed").innerHTML = "<h5><u>Instructions:</u></br>Input your passphrase and e-mail as salt to generate a seed.</br><strong>Note:</strong> This seed is generated in your browser and not sent anywhere.</h5>";
+        document.getElementById("seed").innerHTML = this.instructions;
     };
 
     this.genSeed = function(passphrase, salt) {

@@ -32,10 +32,10 @@ If you prefer to use the Wallet offline, make sure your checksums match.
 
 ```
 shasum -a 256 index.html
-ea87ffad9e51cd802d091db0e84356ea43a259190b18f2d66f524b8dd3f99b09  index.html
+790c5d963a3b4a9c98edb9041a656bcda16e2b164594e9e5531393e46123d57e  index.html
 shasum -a 256 js/*
 d09a8688f37c7442bb1e6699b46efb191d9281ef05a492586fa0f54dc4e5110a  js/sjcl.js
-433a6984826f8d1167adb6290352668e7ad4d799083200e41b37db0e82ae3460  js/vesper.js
+4d525bf89593c61ee7f9d3319eed317c7867cc68f2e4942dfd794ed4e5b1c91f  js/vesper.js
 ```
 
 # Contribution policy

@@ -6,7 +6,7 @@ app.controller('FormController', function () {
     this.title = "Vesper Wallet";
     this.instructions = "<h5><u>Instructions:</u>\
     <ol>\
-    <li>Choose a strong, random passphrase</li>\
+    <li>Choose a strong, random passphrase.</li>\
     <li>Input your passphrase and e-mail as salt to generate a seed.</li>\
     <li>Note your passphrase somewhere safe.</li>\
     </ol>\
@@ -22,7 +22,7 @@ app.controller('FormController', function () {
 
     this.genSeed = function(passphrase, salt) {
         var seed = "";
-        var derivedKey = sjcl.misc.pbkdf2(passphrase, salt, 50000, 256);
+        var derivedKey = sjcl.misc.pbkdf2(passphrase, salt, 65536, 2048);
 
         for(;seed.length < 81;seed += sjcl.codec.base64.fromBits(derivedKey).replace(/[^A-Z9]+/g, '')) {};
         seed = seed.substr(1, 81)
